@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: client-service
+  sleuth:
+    sampler:
+      probability: 2.0
+  zipkin:
+    enabled: true
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka} # 1 укажите явный маршрут к серверу eureka (serviceUrl)
+  instance:
+    prefer-ip-address: true
+server:
+  port: 8082
+feign:
+  circuitbreaker:
+    enabled: true
